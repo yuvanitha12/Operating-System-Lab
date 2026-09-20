@@ -1,0 +1,66 @@
+Ex. No: 2.2 - UNIX COMMANDS
+Syntax and example are the same unless noted.
+
+GENERAL COMMANDS
+date                    Displays current date and time
+date "+%H-%M-%S"        Date/time in a user-defined format
+cal 2000                Calendar of a year          (cal <year>)
+cal 6 2026              Calendar of a month         (cal <month> <year>)
+echo Hello World        Prints text on the screen
+echo "Line1 Line2 Line3"  Displays multiple lines of text
+who                     Users currently logged in
+who -H                  Logged-in users with column headings
+who -b                  Last system boot time
+who am i                Information about the current user session
+tty                     Terminal name associated with the user
+bc                      Calculator (inside bc: obase=2 then 10 -> 1010)
+clear                   Clears the terminal screen
+man ls                  Manual page of a command    (man <command>)
+tput clear              Clears the screen using terminal capabilities
+tput longname           Complete terminal description
+tput smso               Enable standout (highlight) mode
+tput rmso               Disable standout mode
+ls                      List files and directories
+ls -a                   Include hidden files
+ls -l                   Long listing
+ls -r                   Reverse order
+ls -t                   Sort by modification time
+
+DIRECTORY RELATED COMMANDS
+pwd                     Full path of the current working directory
+mkdir demo              Create a directory          (mkdir <directory_name>)
+cd demo                 Change directory            (cd <directory_name>)
+rmdir demo              Remove an empty directory   (rmdir <directory_name>)
+
+FILE RELATED COMMANDS
+cat > file1.txt         Create a file and type data into it (Ctrl+D to save)
+cat file1.txt           Display the contents of a file
+cat file1.txt > file2.txt    Copy contents (overwrite destination)
+cat file1.txt >> file2.txt   Append contents to another file
+cat -n file1.txt        Display with line numbers
+sort names.txt          Sort file contents alphabetically
+cp file1.txt file2.txt  Copy a file
+mv file1.txt file2.txt  Move / rename a file
+rm file1.txt            Remove a file
+wc file1.txt            Count lines, words and characters
+wc -l file1.txt         Count lines only
+wc -w file1.txt         Count words only
+wc -c file1.txt         Count characters only
+lp file1.txt            Send a file to the printer
+pg file1.txt            Display a file page by page (use "less" if pg is missing)
+
+FILTERS AND PIPES
+head file1.txt          First 10 lines of a file
+tail file1.txt          Last 10 lines of a file
+more file1.txt          Display a file one page at a time
+grep hello file1.txt    Search for a pattern in a file
+sort file1.txt          Sort in ascending order
+ls | wc -l              Pipe: output of one command becomes input of the next
+echo unix | tr "[a-z]" "[A-Z]"    Translate characters (lower -> upper case)
+
+COMMUNICATION THROUGH UNIX COMMANDS
+mesg y                  Allow other users to send messages to your terminal
+write kali              Send a message to another logged-in user (write <username>)
+wall "Server restart in 10 min"   Broadcast a message to all logged-in users
+mail kali               Send mail to another user   (mail <username>)
+reply kali              Reply to a received mail    (reply <username>)
